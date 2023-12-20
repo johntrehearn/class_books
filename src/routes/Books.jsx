@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 
 import useAxios from '../services/useAxios';
 
+import defaultImage from '../assets/kelpie.jpg'
+
 import {
   Box,
   Card,
@@ -67,7 +69,7 @@ function Books() {
                 >
                   <CardMedia
                     sx={{height: 250}}
-                    image={book.img}
+                    image={book.img || defaultImage}
                     title={book.name}
                   />
                   <Box sx={{pt: 2, pl: 2}}>
