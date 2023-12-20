@@ -43,6 +43,7 @@ function AddBook() {
   };
 
   const addBookHandler = (e) => {
+    
     const { name, value, checked, type } = e.target;
     if (type === 'checkbox' && name === 'completed') {
       setBook({ ...book, [name]: checked });
@@ -51,7 +52,8 @@ function AddBook() {
     }
   };
 
-  function postHandler() {
+  function postHandler(e) {
+    e.preventDefault();
     post('books', book);
   }
 
